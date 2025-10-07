@@ -21,6 +21,6 @@ if command -v gnome-session-quit >/dev/null 2>&1; then
     echo -e "${CYAN}Logging out...${RESET}"
     gnome-session-quit --logout --no-prompt
 else
-    echo -e "${CYAN}Logging out...${RESET}"
+    echo -e "${CYAN}Changing wait...${RESET}"
     pkill -KILL -u "$USER"
 fi
