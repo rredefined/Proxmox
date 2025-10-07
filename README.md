@@ -11,7 +11,7 @@ Run it on a fresh Debian install and get your Proxmox VE up and running.
 **Usage:**
 
 ```bash
-wbash <(curl -s https://raw.githubusercontent.com/rredefined/Proxmox//main/pve.sh
+bash <(curl -s https://raw.githubusercontent.com/rredefined/Proxmox//main/pve.sh
 ```
 
 ---
