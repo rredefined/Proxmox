@@ -1,8 +1,8 @@
 #!/bin/bash
 # ─────────────────────────────────────────────
-#  🌙 NighT Hostname Changer
-#  Made by: NighT | Discord: Nightt.js
-#  Works on: Ubuntu, Debian, Fedora, Arch, Proxmox & more
+# 🌙 NighT Hostname Changer
+# Made by: NighT | Discord: Nightt.js
+# Works on: Ubuntu, Debian, Fedora, Arch, Proxmox & more
 # ─────────────────────────────────────────────
 
 # Colors
@@ -22,11 +22,10 @@ clear
 echo -e "${MAGENTA}${BOLD}"
 echo "╔══════════════════════════════════════════════════════╗"
 echo "║                                                      ║"
-echo "║      🌙  NighT Hostname Changer - Linux Edition       ║"
+echo "║        🌙  NighT Hostname Changer - Linux Tool        ║"
 echo "║                                                      ║"
 echo "╚══════════════════════════════════════════════════════╝"
 echo -e "${RESET}"
-sleep 0.4
 
 # ── Credits ─────────────────────────────────
 echo -e "${CYAN}${BOLD}👨‍💻 Made by:${RESET} ${WHITE}NighT${RESET}"
@@ -61,16 +60,17 @@ if [[ "$choice" =~ ^[Yy]$ ]]; then
     echo -e "${YELLOW}🔧 Applying hostname...${RESET}"
     if sudo hostnamectl set-hostname "$new_hostname"; then
         echo -e "${GREEN}✅ Hostname successfully changed to:${RESET} ${YELLOW}${new_hostname}${RESET}"
-        echo -e "${RED}${BOLD}Exiting shell to apply changes...${RESET}"
+        echo -e "${RED}${BOLD}Please Reconect to your machine...${RESET}"
         sleep 2
-        exit
+        # gracefully exit only the current shell (not the whole system)
+        builtin exit
     else
         echo -e "${RED}❌ Failed to set hostname. Make sure you have sudo privileges.${RESET}"
         exit 1
     fi
 else
     if sudo hostnamectl set-hostname "$new_hostname"; then
-        echo -e "${YELLOW}🕒 Hostname will take effect on next reconnect.${RESET}"
+        echo -e "${YELLOW}🕒 Hostname will take effect after you reconnect.${RESET}"
         echo -e "${CYAN}New hostname set to:${RESET} ${YELLOW}${new_hostname}${RESET}"
     else
         echo -e "${RED}❌ Failed to set hostname. Make sure you have sudo privileges.${RESET}"
