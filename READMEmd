@@ -1,4 +1,4 @@
-# dlpve - quick proxmox install script
+# Pve Script - quick proxmox install script
 
 This is basically Proxmox’s docs, but wrapped in an install script designed for quick deployment. You want something fast? Like uhhhhhh? iPXE but for Proxmox? This is it.
 
@@ -11,7 +11,7 @@ Run it on a fresh Debian install and get your Proxmox VE up and running.
 **Usage:**
 
 ```bash
-wget -O install.sh https://raw.githubusercontent.com/PowerEdgeR710/dlpve/refs/heads/main/install.sh && bash install.sh
+wget -O install.sh https://raw.githubusercontent.com/rredefined/Proxmox/refs/heads/main/install.sh && bash pve.sh
 ```
 
 ---
