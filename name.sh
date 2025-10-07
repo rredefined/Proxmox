@@ -9,20 +9,14 @@ RESET="\e[0m"
 # Credits
 echo -e "${CYAN}Script made by NighT | Discord: Nightt.js${RESET}"
 
-# Set default hostname if not provided
-new_hostname="${1:-$(hostname)}"
+# Prompt for new hostname
+read -rp "$(echo -e "${YELLOW}Enter the new hostname: ${RESET}")" new_hostname
 
-# Set the hostname
-echo -e "${YELLOW}Setting hostname to: ${new_hostname}${RESET}"
+# Set the hostname using hostnamectl
 sudo hostnamectl set-hostname "$new_hostname"
-
-# Update /etc/hosts
-sudo sed -i "s/127.0.1.1\s.*/127.0.1.1\t$new_hostname/" /etc/hosts
-
-# Display the new hostname
 echo -e "${GREEN}Hostname successfully changed to: ${new_hostname}${RESET}"
 
-# Log out the user
+# Log out current user
 if command -v gnome-session-quit >/dev/null 2>&1; then
     echo -e "${CYAN}Logging out...${RESET}"
     gnome-session-quit --logout --no-prompt
