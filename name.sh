@@ -16,5 +16,5 @@ read -rp "$(echo -e "${YELLOW}Enter the new hostname: ${RESET}")" new_hostname
 sudo hostnamectl set-hostname "$new_hostname"
 echo -e "${GREEN}Hostname successfully changed to: ${new_hostname}${RESET}"
 
-# Verify the hostname immediately
+# Verify immediately
 echo -e "${CYAN}Current hostname is: $(hostname)${RESET}"
